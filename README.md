@@ -16,7 +16,7 @@ To run the project locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/library-management-system.git`
 2. Open the project in your preferred IDE.
-3. Run the `LibraryManagementSystem.java` file.
+3. Run the `Main.java` file.
 
 ## Usage 🖥️
 
