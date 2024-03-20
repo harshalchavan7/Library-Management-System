@@ -1,3 +1,11 @@
+package com.librarysystem.service;
+
+import com.librarysystem.model.Book;
+import com.librarysystem.model.User;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class LibraryService {
     private List<Book> books;
     private List<User> users;
