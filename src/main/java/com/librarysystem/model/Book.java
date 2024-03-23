@@ -1,4 +1,4 @@
-package main.java.com.librarysystem.model;
+package com.librarysystem.model;
 
 public class Book {
     // Attributes
