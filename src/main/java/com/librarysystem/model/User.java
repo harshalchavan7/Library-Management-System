@@ -1,10 +1,14 @@
-package main.java.com.librarysystem.model;
+package com.librarysystem.model;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class User {
     private int id;
     private String name;
     private String email;
     private String phoneNumber;
+    private List<Book> borrowedBooks;
 
     // Constructors
     public User(int id, String name, String email, String phoneNumber) {
@@ -12,6 +16,7 @@ public class User {
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.borrowedBooks = new ArrayList<>();
     }
 
     // Getters and Setters
@@ -45,6 +50,20 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public List<Book> getBooks() {
+        return borrowedBooks;
+    }
+
+    // Method to borrow a book
+    public void borrowBook(Book book) {
+        borrowedBooks.add(book);
+    }
+
+    // Method to return a book
+    public void returnBook(Book book) {
+        borrowedBooks.remove(book);
     }
 
     // toString method to represent object as a string
