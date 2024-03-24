@@ -6,6 +6,7 @@ public class Book {
     private String title;
     private String author;
     private int yearPublished;
+    private boolean borrowed;
 
     // Constructor
     public Book(String isbn, String title, String author, int yearPublished) {
@@ -13,6 +14,7 @@ public class Book {
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
+        this.borrowed = false;
     }
 
     // Getters and setters
@@ -48,6 +50,14 @@ public class Book {
         this.yearPublished = yearPublished;
     }
 
+    public boolean isBorrowed() {
+        return borrowed;
+    }
+
+    public void setBorrowed(boolean borrowed) {
+        this.borrowed = borrowed;
+    }
+
     // toString method to represent Book object as a string
     @Override
     public String toString() {
@@ -56,6 +66,7 @@ public class Book {
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", yearPublished=" + yearPublished +
+                ", borrowed=" + borrowed +
                 '}';
     }
 }
