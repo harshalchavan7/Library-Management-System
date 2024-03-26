@@ -23,8 +23,19 @@ To run the project locally, follow these steps:
 - Choose options from the menu to perform various tasks such as adding books, adding members, borrowing books, returning books, and displaying available books.
 - Follow the instructions prompted in the command-line interface to interact with the system.
 
-## Contributing 🤝
+## Project Structure 📁
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or create a pull request.
+- `src/`: Contains the source code of the project.
+- `lib/`: Contains external libraries used in the project.
 
-🔧💡 Your feedback is valuable to me!
+## Dependencies 📦
+
+- Java JDK 8 or higher
+
+## Example Usage
+
+```java
+// Example code snippet demonstrating how to add a book
+Library library = new Library();
+Book book = new Book("The Great Gatsby", "F. Scott Fitzgerald", "9780743273565");
+library.addBook(book);
