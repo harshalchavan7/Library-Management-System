@@ -17,6 +17,15 @@ public class Book {
         this.borrowed = false;
     }
 
+    // Constructor with only ISBN and title
+    public Book(String isbn, String title) {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = ""; // default value for author
+        this.yearPublished = 0; // default value for yearPublished
+        this.borrowed = false;
+    }
+
     // Getters and setters
     public String getIsbn() {
         return isbn;
