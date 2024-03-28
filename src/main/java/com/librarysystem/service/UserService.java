@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
+    // Declare the 'users' list at the class level
     private List<User> users;
 
     public UserService() {
