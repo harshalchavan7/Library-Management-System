@@ -15,7 +15,7 @@ public class Main {
 
         int choice;
         do {
-            System.out.println("Menu:");
+            System.out.println("\n\nMenu:");
             System.out.println("1. Add Book");
             System.out.println("2. Add User");
             System.out.println("3. Borrow Book");
@@ -25,7 +25,7 @@ public class Main {
             System.out.println("7. Show All Books");
             System.out.println("8. Show All Users");
             System.out.println("0. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.print("\nEnter your choice: ");
             choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline character
 
@@ -66,7 +66,7 @@ public class Main {
     }
 
     private static void addBook(LibraryService libraryService, Scanner scanner) {
-        System.out.print("Enter ISBN: ");
+        System.out.print("\nEnter ISBN: ");
         String isbn = scanner.nextLine();
         System.out.print("Enter Title: ");
         String title = scanner.nextLine();
@@ -77,11 +77,11 @@ public class Main {
         scanner.nextLine(); // Consume newline character
         Book book = new Book(isbn, title, author, yearPublished);
         libraryService.addBook(book);
-        System.out.println("Book added successfully.");
+        System.out.println("Book added successfully.\n");
     }
 
     private static void addUser(UserService userService, Scanner scanner) {
-        System.out.print("Enter ID: ");
+        System.out.print("\nEnter ID: ");
         int id = scanner.nextInt();
         scanner.nextLine(); // Consume newline character
         System.out.print("Enter Name: ");
@@ -92,11 +92,11 @@ public class Main {
         String phoneNumber = scanner.nextLine();
         User user = new User(id, name, email, phoneNumber);
         userService.addUser(user);
-        System.out.println("User added successfully.");
+        System.out.println("User added successfully.\n");
     }
 
     private static void borrowBook(LibraryService libraryService, UserService userService, Scanner scanner) {
-        System.out.print("Enter user ID: ");
+        System.out.print("\nEnter user ID: ");
         int userId = scanner.nextInt();
         scanner.nextLine(); // Consume newline character
 
@@ -110,16 +110,17 @@ public class Main {
             boolean success = libraryService.borrowBook(book, user);
             if (success) {
                 System.out.println("Book borrowed successfully by " + user.getName());
+                System.out.println();
             } else {
-                System.out.println("Book not available for borrowing");
+                System.out.println("Book not available for borrowing\n");
             }
         } else {
-            System.out.println("User or book not found");
+            System.out.println("User or book not found\n");
         }
     }
 
     private static void returnBook(LibraryService libraryService, UserService userService, Scanner scanner) {
-        System.out.print("Enter user ID: ");
+        System.out.print("\nEnter user ID: ");
         int userId = scanner.nextInt();
         scanner.nextLine(); // Consume newline character
 
@@ -132,42 +133,47 @@ public class Main {
         if (user != null && book != null) {
             libraryService.returnBook(book, user);
             System.out.println("Book returned by " + user.getName());
+            System.out.println();
         } else {
-            System.out.println("User or book not found");
+            System.out.println("User or book not found\n");
         }
     }
 
     private static void findBookByTitle(LibraryService libraryService, Scanner scanner) {
-        System.out.print("Enter title to search: ");
+        System.out.print("\nEnter title to search: ");
         String title = scanner.nextLine();
         Book foundBook = libraryService.findBookByTitle(title);
         if (foundBook != null) {
             System.out.println("Book found: " + foundBook.getTitle());
+            System.out.println();
         } else {
-            System.out.println("Book not found");
+            System.out.println("Book not found\n");
         }
     }
 
     private static void findUsersByName(UserService userService, Scanner scanner) {
-        System.out.print("Enter name to search: ");
+        System.out.print("\nEnter name to search: ");
         String name = scanner.nextLine();
         System.out.println("Users named " + name + ":");
         for (User user : userService.findUsersByName(name)) {
             System.out.println(user.getName());
         }
+        System.out.println();
     }
 
     private static void showAllBooks(LibraryService libraryService) {
-        System.out.println("All Books:");
+        System.out.println("\nAll Books:");
         for (Book book : libraryService.getAllBooks()) {
             System.out.println(book);
         }
+        System.out.println();
     }
 
     private static void showAllUsers(UserService userService) {
-        System.out.println("All Users:");
+        System.out.println("\nAll Users:");
         for (User user : userService.getAllUsers()) {
             System.out.println(user);
         }
+        System.out.println();
     }
 }
